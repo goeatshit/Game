@@ -11,27 +11,36 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class GameView extends View {
-  private  int posX , posY = 300;
+  private  int posX , posY = 0;
 
-    public int getPosX() {
-        return posX;
+
+    public void MoveLeft(){
+        if (posX >0) {
+            posX-=50;
+            invalidate();
+        }
+
     }
-
-    public void setPosX(int posX) {
-        if (posX > 0 && posX < getWidth()-200) {
-            this.posX = posX;
+    public void MoveRight(){
+        if (posX >=0&&posX<getWidth()-200) {
+            posX+=50;
+            invalidate();
         }
     }
-    public int getPosY() {
-        return posY;
-    }
-
-    public void setPosY(int posY) {
-        if (posY > 0 && posY < getHeight()-200) {
-            this.posY = posY;
+    public void MoveUp(){
+        if (posY > 0) {
+            posY-=50;
+            invalidate();
         }
-    }
 
+    }
+    public void MoveDown(){
+        if (posY >=0&&posY<getHeight()-250) {
+            posY+=50;
+            invalidate();
+        }
+
+    }
     @Override
     protected void onDraw(Canvas can) {
         super.onDraw(can);

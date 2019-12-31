@@ -30,23 +30,19 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.Arrow_up:
                 Log.d(TAG, "OnClick: UP");
-                gameview.setPosY((gameview.getPosY()-100));
-                gameview.invalidate();
+                gameview.MoveUp();
                 break;
             case R.id.Arrow_down:
                 Log.d(TAG, "OnClick: DOWN");
-                gameview.setPosY(gameview.getPosY()+100);
-                gameview.invalidate();
+                gameview.MoveDown();
                 break;
             case R.id.Arrow_left:
                 Log.d(TAG, "OnClick: LEFT");
-                gameview.setPosX(gameview.getPosX()-100);
-                gameview.invalidate();
+                gameview.MoveLeft();
                 break;
             case R.id.Arrow_right:
                 Log.d(TAG, "OnClick: RIGHT");
-                gameview.setPosX(gameview.getPosX()+100);
-                gameview.invalidate();
+                gameview.MoveRight();
                 break;
     }
 }
